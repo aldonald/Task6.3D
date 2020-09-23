@@ -80,7 +80,6 @@ const sendEmail = (type, user, email, firstname, lastname, country, code) => {
     })
 
     res.on("end", function () {
-      debugger
       if (res.status === 202) {
         console.log("Email sent.")
       }

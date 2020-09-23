@@ -220,7 +220,7 @@ app.route('/api/forgotpassword/')
       user.passwordTokenCreated = Date.now()
       user.save()
       sendEmail('forgot', user._id.toString(), user.emailaddress, user.firstname, null, null, token)
-      return res.sendFile(path.join(__dirname, '..', 'public', 'api/passwordemailsent/'))
+      return res.sendFile(path.join(__dirname, '..', 'public', 'passwordemailsent.html'))
     }
   })
 })
@@ -268,7 +268,6 @@ app.post('/api/passwordreset/', (req, res, next) => {
           user.password = req.body.inputPassword
           user.save()
         }
-        debugger
         res.redirect('/')
       }
     })

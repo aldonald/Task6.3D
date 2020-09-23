@@ -27,7 +27,6 @@ const App = () => {
         setLoggedin(true)
         setUser(user)
       }
-      debugger
     }).catch((err) => {
     }).finally(() => setLoading(false))
   }
